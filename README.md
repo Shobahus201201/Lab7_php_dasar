@@ -224,46 +224,78 @@ umur berdasarkan inputan tanggal lahir. Dan pilihan pekerjaan dengan gaji yang
 berbeda-beda sesuai pilihan pekerjaan.
 
 ## Jawab
-### Pertama saya akan membuat 1 module dan 3 package
+```PHP
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas</title>
+</head>
+<body>
+   <h2>TUGAS</h2>
+    <form class="form" method="post" >
+            <label>Nama: </label>
+            <br>
+            <input type="text" name="nama">
+            <br>
+            <label>Tanggal Lahir: </label>
+            <br>
+            <input type="text" name="tgl_lahir">
+            <br>
+            <label>Pekerjaan: </label>
+            <br>
+            <select name='pekerjaan'>
+                <option value="-">Pilih Pekerjaan</option>
+                <option value='Graphic Designer'>Graphic Designer</option>
+                <option value='Web Developer'>Web Developer</option>
+                <option value='HRD'>HRD</option>
+                <option value='System Analyst'>System Analyst</option>
+                <option value="IT Support">IT Support</option>
+            </select>
+            <br>
+            <br>
+            <button type="kirim">Submit</button>
+    </form>
+    <h2>HASIL</h2>
 
-![img2!](assets/img/praktikum/1.png)
+    <?php
+        # Memanggil Nama
+        echo 'Nama: ' . $_POST['nama'];
 
-terdapat folder core yang berisi file umur.php dan gaji.php
+        # Merubah Tanggal Lahir menjadi Umur (Tahun)
+        $tgl_lahir = @$_POST['tgl_lahir'];
 
-dimana file `umur.php` untuk menampilkan output dengan menghitung
-umur berdasarkan inputan tanggal lahir, 
+        $lahir = new DateTime($tgl_lahir);
+        $hari_ini = new DateTime();
 
-Lalu file `gaji.php` untuk menentukan gaji yang berbeda-beda sesuai pilihan pekerjaan,
+        $diff = $hari_ini->diff($lahir);
 
-dan file `index.php` sebagai halaman utama dalam program sederhana ini.
+        # Memanggil fungsi umur yg sudah dibuat diatas
+        echo "<br> Umur: ". $diff->y ." Tahun";
 
-### Menentukan umur berdasarkan tanggal lahir
-![img2!](assets/img/praktikum/umr.png)
+        # Memanggil pekerjaan
+        echo "<br> Pekerjaan: ". $_POST['pekerjaan'];
 
-Untuk menentukan umur berdasarkan tgl lahir, saya menggunakan ``date_diff()`` yang berfungsi untuk menghitung selisih waktu dengan format penulisan seperti diatas
+        # Kondisi if pekerjaan untuk menentukan gaji
+        $pekerjaan = @$_POST['pekerjaan'];
 
-### Menentukan gaji sesuai dengan pilihan pekerjaan
-![img2!](assets/img/praktikum/g.png)
+        if($pekerjaan == "Graphic Designer"){
+            echo '<br> Gaji: Rp. 4.000.000,-';
+        }elseif($pekerjaan == "Web Developer"){
+            echo '<br> Gaji: Rp. 5.000.000,-';
+        }elseif($pekerjaan == "HRD"){
+            echo '<br> Gaji: Rp. 10.000.000,-';
+        }elseif($pekerjaan == "System Analyst"){
+            echo '<br> Gaji: Rp. 20.000.000,-';
+        }elseif ($pekerjaan == "IT Support"){
+            echo '<br> Gaji: Rp. 7.000.000,-';
+        }
 
-Untuk Menentukan gaji sesuai dengan pilihan pekerjaan, saya menggunakan pengkondisian ``if()`` dan untuk opsi pilihan html menggunakan type `select`. dimana jika saya memilih dokter maka gaji saya adalah 10jt /bulan, jika tidak maka saya akan memilih pilihan selanjutnya. dst sampai tidak ada pilihan yang tersisa
-
-### Form Input
-![img2!](assets/img/praktikum/form.png)
-
-Untuk form saya menggunakan method `POST`, dan action ``$_SERVER["PHP_SELF"]`` yaitu variabel super global yang mengembalikan nama file dari skript yang sedang dieksekusi. Jadi ``$_SERVER["PHP_SELF"]`` mengirimkan data formulir yang dikirimkan ke halaman itu sendiri
-
-### Form Output
-![img2!](assets/img/praktikum/o.png)
-
-didalam kolom tabel saya menyisipkan sintaks php ke dalam html supaya pas nanti di run akan muncul output yg sebelumnya sudah di input
-
-untuk kolom umur dan gaji saya memanggil file php terpisah, tujuan nya agar penulisan kode terlihat lebih rapi
-
-## Output
-![img2!](assets/img/praktikum/14.png)
-
-![img2!](assets/img/praktikum/15.png)
-
-![img2!](assets/img/praktikum/16.png)
-
-
+    ?>
+  </body>
+</html>
+```
+## Hasil Outputnya Sebagai Berikut :
+![Foto](Foto/Foto15.png)
