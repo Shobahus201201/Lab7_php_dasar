@@ -35,7 +35,7 @@
             margin: 1em auto;
             height: 2em;
             font-size: 1.1rem;
-            background-color: #e0daca;
+            background-color: #00FF00;
             border-color: white;
             min-width: 300px;
         }
@@ -44,7 +44,7 @@
 
     <body>
         <h1 id="title">Survey Formulir Pekerjaan dan Gaji</h1>
-        <p id="description"><i>Melansir dari situs <a href="https://id.indeed.com/career/php-developer/salaries"> indeed.com</a></i></p>
+        <p id="description"><i>Melansir dari situs <a href="https://www.jobstreet.co.id/id/job-search/it-jobs/"> jobstreet.co.id</a></i></p>
 
         <form id="survey-form" action="" method="POST">
             <fieldset>
@@ -56,16 +56,16 @@
                 </label>
                 <label>Pekerjaan: 
                     <label>
-                    <input type="radio" name="job" value="0"/>PHP Developer
+                    <input type="radio" name="job" value="0"/>System Analyst
                     </label>
                     <label>
                     <input type="radio" name="job" value="1"/>IT Support
                     </label>
                     <label>
-                    <input type="radio" name="job" value="2"/>Network Engineer
+                    <input type="radio" name="job" value="2"/>System Administrator
                     </label>
                 </label>
-                <button type="submit" name="submit">Kirim</button>
+                <button type="submit" name="submit">Submit</button>
             </fieldset>
             <fieldset>
                 <?php
@@ -80,12 +80,12 @@
                     $today =  new DateTime('today');
                     $usia = $today->diff($date_user)->y;
 
-                    $job_array = ["PHP Developer","IT Support","Network Engineer"];
-                    $salary_array = ["Rp. 7.000.000","Rp. 4.500.000","Rp. 5.000.000"];
+                    $job_array = ["System Analyst","IT Support","System Administrator"];
+                    $salary_array = ["Rp. 8.000.000","Rp. 6.400.000","Rp. 4.200.000"];
 
 
                     echo "Halo, ".$nama."<br>Kamu lahir pada tanggal ".$date.", Usia mu ".$usia." tahun";
-                    echo "<br>Pekerjaan yang kamu pilih adalah ".$job_array[(int)$job].", dengan penghasilan kurang lebih ".$salary_array[(int)$job];
+                    echo "<br>Pekerjaan yang anda pilih adalah ".$job_array[(int)$job].", dengan penghasilan kurang lebih ".$salary_array[(int)$job];
                 }
                 ?>
             </fieldset>
