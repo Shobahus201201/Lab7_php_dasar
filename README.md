@@ -60,8 +60,10 @@ echo "Hello World";
 </html>
 ```
 ![Foto](Foto/Foto5.png)
+
 Kemudian untuk mengakses hasilnya melalui URL:
 http://localhost/Lab7_php_dasar/dasar.php
+
 ### Variable PHP
 Menambahkan variable pada program.
 
