@@ -70,8 +70,8 @@ Menambahkan variable pada program.
 
 ```PHP
 <?php
-$nim = "0411500400";
-$nama = 'Abdullah';
+$nim = "312010076";
+$nama = 'Shobahus Solichin';
 echo "NIM : " . $nim . "<br>";
 echo "Nama : $nama";
 ?>
@@ -202,7 +202,7 @@ $i++;
 ```
 ![Foto](Foto/Foto13.png)
 
-### Perulangan do while
+### Perulangan dowwhile
 ## **Codingannya** ##
 ```PHP
 <?php
