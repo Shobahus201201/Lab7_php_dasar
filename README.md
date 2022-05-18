@@ -89,7 +89,7 @@ echo 'Selamat Datang ' . $_GET['nama'];
 ```
 
 Untuk mengaksesnya gunakan URL:
-http://localhost/Lab7_php_dasar/dasar.php?nama=%20Shoba
+http://localhost/Lab7_php_dasar/Dasar.php?nama=Shobahus%20Solichin
 
 ![Foto](Foto/Foto7.png)
 
